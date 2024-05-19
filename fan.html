@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+        #container{
+            height: 200px;
+            width: 200px;
+            border: 2px solid black;
+            border-radius: 100%;
+            position: absolute;
+            top: 100px;
+            left: 100px;
+            /* background-color: #120303; */
+        }
+       
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div id="dot"></div>
+        <div id="b1"></div>
+        <div id="b2"></div>
+        <!-- <div id="b3"></div> -->
+        <!-- <div id="b4"></div> -->
+        
+    </div>
+    <script>
+        clock();
+        function clock()
+        {
+            var h = document.getElementById('h');
+            var m = document.getElementById('m');
+            var s = document.getElementById('s');
+            var dt = new Date();
+            var dh = dt.getHours() *60;
+            var dm = dt.getMinutes() *6;            
+            var ds = dt.getSeconds() *6;
+            h.style.transform = "translate(-50% , -50%) rotate("+dh+"deg)";           
+            m.style.transform = "translate(-50% , -50%) rotate("+dm+"deg)";  
+            s.style.transform = "translate(-50%, -50%) rotate("+ds+"deg)";  
+        }
+        setInterval(clock,1000);
+    </script>
+</body>
+</html>
